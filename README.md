@@ -56,11 +56,11 @@
 
 전체 분석은 데이터 로딩부터 모델 평가까지 5단계로 구성됩니다.
 
-1. **데이터 로딩** — CSV 파일 불러오기 및 기본 구조 확인
-2. **EDA** — 분포 확인, 상관 관계 히트맵, IQR 기반 이상치 탐지
-3. **피처 엔지니어링** — Label Encoding, 순서형 변수 매핑, 수치 구간화(Binning)
-4. **모델 학습** — 8:2 Train/Test 분할, StandardScaler 정규화, LinearRegression 학습
-5. **평가** — R², RMSE, MAE 지표 산출 및 해석
+1. **데이터 로딩** - CSV 파일 불러오기 및 기본 구조 확인
+2. **EDA** - 분포 확인, 상관 관계 히트맵, IQR 기반 이상치 탐지
+3. **피처 엔지니어링** - Label Encoding, 순서형 변수 매핑, 수치 구간화(Binning)
+4. **모델 학습** - 8:2 Train/Test 분할, StandardScaler 정규화, LinearRegression 학습
+5. **평가** - R², RMSE, MAE 지표 산출 및 해석
 
 ```mermaid
 flowchart TD
@@ -69,12 +69,12 @@ flowchart TD
     C --> D[모델 학습]
     D --> E[평가]
 
-    A --> A1["CSV 불러오기 — 6,607행 × 20열"]
+    A --> A1["CSV 불러오기 - 6,607행 × 20열"]
     B --> B1[분포 확인]
     B --> B2[상관 관계 히트맵]
-    B --> B3["이상치 탐지 — IQR & 박스플롯"]
+    B --> B3["이상치 탐지 - IQR & 박스플롯"]
     C --> C1[범주형 변수 Label Encoding]
-    C --> C2["순서형 변수 매핑 — Parental_Impact_Score"]
+    C --> C2["순서형 변수 매핑 - Parental_Impact_Score"]
     C --> C3["Hours_Studied & Attendance 구간화"]
     D --> D1["Train/Test 분할 80:20"]
     D --> D2[StandardScaler 정규화]
@@ -144,9 +144,9 @@ jupyter notebook analysis.ipynb
 
 | 지표 | 값 | 설명 |
 |------|----|------|
-| R² | — | 모델이 `Exam_Score` 분산을 설명하는 비율 |
-| RMSE | — | 평균 제곱근 오차 (점수 단위) |
-| MAE | — | 평균 절대 오차 (점수 단위) |
+| R² | - | 모델이 `Exam_Score` 분산을 설명하는 비율 |
+| RMSE | - | 평균 제곱근 오차 (점수 단위) |
+| MAE | - | 평균 절대 오차 (점수 단위) |
 
 > 정확한 수치는 노트북 실행 후 확인할 수 있습니다.  
 > 핵심 발견: `Attendance`(출석률)가 `Exam_Score`와 가장 강한 선형 상관 관계를 보였으며, `Hours_Studied`(학습 시간)가 그 뒤를 이었습니다.
@@ -169,7 +169,7 @@ jupyter notebook analysis.ipynb
 | 탐색적 데이터 분석 (EDA) | 분포 확인, 결측치 처리, IQR 및 박스플롯 기반 이상치 탐지 |
 | 데이터 시각화 | 상관 관계 히트맵, 회귀선 포함 산점도, Pearson r 주석 처리 |
 | 피처 엔지니어링 | Label Encoding, 순서형 매핑, 복합 점수 생성, 수치 구간화(Binning) |
-| 머신러닝 — 회귀 분석 | scikit-learn 파이프라인: `StandardScaler` + `LinearRegression`, Train/Test 분할 |
+| 머신러닝 - 회귀 분석 | scikit-learn 파이프라인: `StandardScaler` + `LinearRegression`, Train/Test 분할 |
 | 모델 평가 | R², RMSE, MAE 해석 및 결과 보고 |
 | 데이터 정제 | 범위 초과 목표값 처리 (Exam_Score > 100 → 100으로 클리핑) |
 
@@ -177,7 +177,7 @@ jupyter notebook analysis.ipynb
 
 ## 📄 라이선스
 
-- **데이터셋:** [Kaggle – Student Performance Factors](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors/data) — CC BY 4.0
+- **데이터셋:** [Kaggle – Student Performance Factors](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors/data) - CC BY 4.0
 - **프로젝트 코드:** MIT License
 
 **참고 자료:**
